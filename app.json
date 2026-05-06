@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "OpsPilot",
+    "slug": "opspilot-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0073ea"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0073ea"
+      },
+      "package": "com.opspilot.nativeapp",
+      "versionCode": 1,
+      "permissions": ["android.permission.INTERNET", "android.permission.ACCESS_NETWORK_STATE"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

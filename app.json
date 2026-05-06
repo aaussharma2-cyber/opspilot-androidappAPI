@@ -3,7 +3,9 @@
     "name": "OpsPilot",
     "slug": "opspilot-app",
     "version": "1.0.0",
+    "description": "Compact Android companion app for the OpsPilot operations platform.",
     "orientation": "portrait",
+    "scheme": "opspilot",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
@@ -19,10 +21,17 @@
       },
       "package": "com.opspilot.nativeapp",
       "versionCode": 1,
-      "permissions": ["android.permission.INTERNET", "android.permission.ACCESS_NETWORK_STATE"]
+      "permissions": [
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-asset"
+    ]
   }
 }

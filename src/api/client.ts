@@ -1,8 +1,8 @@
 import axios from 'axios';
-import BASE_URL from '../../config';
+import { apiBaseUrl } from '../../config';
 
 const client = axios.create({
-  baseURL: `${BASE_URL}api`,
+  baseURL: apiBaseUrl(),
   timeout: 20000,
   headers: { 'Content-Type': 'application/json' },
 });
@@ -12,6 +12,13 @@ let _token: string | null = null;
 
 export function setAuthToken(token: string | null) {
   _token = token;
+}
+
+export function describeApiError(err: any, fallback = 'Something went wrong. Please try again.'): string {
+  if (err?.response?.data?.error) return err.response.data.error;
+  if (err?.message === 'Network Error') return 'Could not reach OpsPilot. Check your connection or backend URL.';
+  if (err?.code === 'ECONNABORTED') return 'The request timed out. Pull to refresh and try again.';
+  return fallback;
 }
 
 client.interceptors.request.use((config) => {

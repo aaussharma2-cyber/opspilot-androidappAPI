@@ -5,7 +5,7 @@ import Badge from '../components/Badge';
 import EmptyState from '../components/EmptyState';
 import { COLORS, FONT } from '../theme';
 
-interface Asset { id: number; name: string; category: string; serial_no: string; status: string; purchase_cost: number | null; }
+interface Asset { id: number; name: string; category: string; serial_number: string; status: string; purchase_cost: number | null; }
 
 export default function AssetsScreen({ navigation }: any) {
   const [assets, setAssets]         = useState<Asset[]>([]);
@@ -36,7 +36,7 @@ export default function AssetsScreen({ navigation }: any) {
               <Text style={styles.name}>{item.name}</Text>
               <Badge label={item.status} />
             </View>
-            <Text style={styles.meta}>{[item.category, item.serial_no].filter(Boolean).join(' · ')}</Text>
+            <Text style={styles.meta}>{[item.category, item.serial_number].filter(Boolean).join(' · ')}</Text>
             {item.purchase_cost != null && <Text style={styles.cost}>${Number(item.purchase_cost).toLocaleString()}</Text>}
           </View>
         )}

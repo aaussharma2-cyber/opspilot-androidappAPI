@@ -10,7 +10,7 @@ import { COLORS, FONT } from '../theme';
 
 interface Task { id: number; title: string; status: string; priority: string; due_date: string | null; owner: string; }
 
-const STATUSES  = ['To Do', 'In Progress', 'Done', 'Blocked'];
+const STATUSES  = ['Backlog', 'In Progress', 'Blocked', 'Review', 'Done'];
 const PRIORITIES = ['Low', 'Medium', 'High', 'Critical'];
 
 export default function TasksScreen({ navigation }: any) {
@@ -18,7 +18,7 @@ export default function TasksScreen({ navigation }: any) {
   const [refreshing, setRefreshing] = useState(false);
   const [modal, setModal]         = useState(false);
   const [title, setTitle]         = useState('');
-  const [status, setStatus]       = useState('To Do');
+  const [status, setStatus]       = useState('Backlog');
   const [priority, setPriority]   = useState('Medium');
   const [owner, setOwner]         = useState('');
   const [saving, setSaving]       = useState(false);
